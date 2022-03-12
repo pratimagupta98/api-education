@@ -209,3 +209,17 @@ exports.deleteuser = async (req, res) => {
     .then((data) => resp.deleter(res, data))
     .catch((error) => resp.errorr(res, error));
 };
+exports.changepassadmin = async (req, res) => {
+  await User.findOneAndUpdate(
+    { _id: req.userId },
+    { $set: { password: req.body.password } },
+    { new: true }
+  )
+    .then((data) => resp.successr(res, data))
+    .catch((error) => resp.errorr(res, error));
+};
+exports.countuser = async (req, res) => {
+  await User.countDocuments({ _id: req.params.id })
+    .then((data) => resp.successr(res, data))
+    .catch((error) => resp.errorr(res, error));
+};
