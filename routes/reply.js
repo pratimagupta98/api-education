@@ -18,3 +18,5 @@ router.get("/admin/allReply", allReply);
 router.get("/admin/deleteReply/:id", deleteReply);
 
 module.exports = router;
+
+//console
