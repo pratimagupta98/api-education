@@ -15,6 +15,7 @@ const {
   enrollusers,
   deleteuser,
   myprofile,
+  changepassadmin,
 } = require("../controllers/user");
 
 router.post("/user/signup", signup);
@@ -30,6 +31,7 @@ router.get("/admin/viewoneuser/:id", viewoneuser);
 router.get("/admin/allusers", allusers);
 router.get("/admin/enrollusers", enrollusers);
 router.get("/admin/deleteuser/:id", deleteuser);
+router.get("/admin/changepassadmin/:id", changepassadmin);
 
 module.exports = router;
 

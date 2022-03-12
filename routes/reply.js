@@ -12,7 +12,7 @@ const {
 } = require("../controllers/reply");
 
 router.post("/admin/addreply", addreply);
-router.post("/admin/editCat/:id", editCat);
+//router.post("/admin/editCat/:id", editCat);
 router.get("/admin/viewoneReply/:id", viewoneReply);
 router.get("/admin/allReply", allReply);
 router.get("/admin/deleteReply/:id", deleteReply);

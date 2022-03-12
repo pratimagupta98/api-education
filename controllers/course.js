@@ -4,7 +4,7 @@ const { uploadFile } = require("../helpers/awsuploader");
 const fs = require("fs");
 
 exports.addcourse = async (req, res) => {
-  const { course_title, desc, long_desc, category } = req.body;
+  const { course_title, desc, long_desc, category_id } = req.body;
 
   const findexist = await Course.findOne({ course_title: course_title });
   if (findexist) {
@@ -15,7 +15,7 @@ exports.addcourse = async (req, res) => {
       desc: desc,
       long_desc: long_desc,
       teacher: req.staffId,
-      category: category,
+      category_id: category_id,
     });
 
     if (req.files) {
